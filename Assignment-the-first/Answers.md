@@ -41,17 +41,17 @@ Next, edit the headers to include the sequence of the index-pair to the header o
 
 Check if index 1 AND index 2 are in the set of 24 known indexes
 
-    If one or both are NOT in the known set, create a counter for unknown indexes (unknown += 1) and then add R1 record to unk_R1.fq and R4 record to unk_R2.fq
+- If one or both are NOT in the known set, create a counter for unknown indexes (unknown += 1) and then add R1 record to unk_R1.fq and R4 record to unk_R2.fq
 
-    If both ARE in the known set, check if the average q score of the record is above a given threshold (will be decided later)
+- If both ARE in the known set, check if the average q score of the record is above a given threshold (will be decided later)
 
-        If the record does not have a q score above the threshold, return to the unknown path
+- If the record does not have a q score above the threshold, return to the unknown path
 
-        If the record does pass the q score threshold, check if the indexes are identical (should be easy to check bc reverse complement function at beginning will have them in the same direction)
+- If the record does pass the q score threshold, check if the indexes are identical (should be easy to check bc reverse complement function at beginning will have them in the same direction)
 
-                If the indexes are NOT identical, create a dictionary for hopped indexes and set a counter, then add R1 to hopped_R1.fq and R4 to hopped_R2.fq
+- If the indexes are NOT identical, create a dictionary for hopped indexes and set a counter, then add R1 to hopped_R1.fq and R4 to hopped_R2.fq
 
-                If the indexes ARE identical, create a dictionary for matched indexes and set a counter, then add R1 to index_R1.fq and R4 to index_R2.fq
+- If the indexes ARE identical, create a dictionary for matched indexes and set a counter, then add R1 to index_R1.fq and R4 to index_R2.fq
 
 Unless the line is an empty string, return to beginning of loop for each new record and continue the same process for all records in all 4 files
 
