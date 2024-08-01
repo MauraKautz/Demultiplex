@@ -33,10 +33,12 @@
 
 
     3. There are 3976613 indexes with N in R2
-    $ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
+       
+   ```$ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l```
 
-    There are 3328051 indexes with N in R3
-    zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l
+   There are 3328051 indexes with N in R3
+
+   ```$ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l```
     
 ## Part 2
 1. Define the problem
@@ -88,19 +90,19 @@ Unless the line is an empty string, return to beginning of loop for each new rec
 Functions:
 
 def rev_comp(index 2: str) -> str:
-    ```Takes index 2 (R3) and reverses it to be in the same direction as index 1 (R2)```
+    Takes index 2 (R3) and reverses it to be in the same direction as index 1 (R2)
     return reverse complement
 Inuput: ATGCT
 Expected Output: AGCAT
 
 def edit_header(F1.header, F2.seq, F4.header, F3.seq: str) -> str:
-    ```Adds the sequence of index 1 and index 2 to all header lines```
+    Adds the sequence of index 1 and index 2 to all header lines
     return edited header
 Input: @ABC123
 Expected output: @ABC123-AAAAAAA-TTTTTTTTT
 
 def check_q(F2.qscores, F3.qscores, qscore threshold: bool) -> bool:
-    ```Checks if the qscores are above a sufficient threshold```
+    Checks if the qscores are above a sufficient threshold
     return true or false
 Input: 36, 32, 20
 Expected output: True
