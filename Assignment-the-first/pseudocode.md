@@ -34,16 +34,18 @@ Functions:
 
 def rev_comp(index 2: str) -> str:
     ```Takes index 2 (R3) and reverses it to be in the same direction as index 1 (R2)```
-    return complement
+    return reverse complement
 Inuput: ATGCT
 Expected Output: AGCAT
 
 def edit_header(F1.header, F2.seq, F4.header, F3.seq: str) -> str:
     ```Adds the sequence of index 1 and index 2 to all header lines```
+    return edited header
 Input: @ABC123
-Expected output: @ABC123-AAAAAAA
+Expected output: @ABC123-AAAAAAA-TTTTTTTTT
 
 def check_q(F2.qscores, F3.qscores, qscore threshold: bool) -> bool:
     ```Checks if the qscores are above a sufficient threshold```
+    return true or false
 Input: 36, 32, 20
 Expected output: True
